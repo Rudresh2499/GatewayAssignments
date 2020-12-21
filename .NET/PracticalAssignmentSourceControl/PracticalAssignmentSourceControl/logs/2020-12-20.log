@@ -1,0 +1,117 @@
+2020-12-20 00:05:00.8439 INFO Returning Index view
+2020-12-20 00:05:04.3254 INFO Returning the Login View
+2020-12-20 01:53:16.3288 INFO Returning Index view
+2020-12-20 01:53:19.5546 INFO Returning the Login View
+2020-12-20 01:53:29.8097 INFO User submitted the login form
+2020-12-20 01:53:31.4101 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 01:53:31.4232 INFO Verifying session
+2020-12-20 01:53:31.4232 INFO Session Verified
+2020-12-20 01:53:41.7714 INFO User logging out and terminating the session
+2020-12-20 01:53:41.7774 INFO Returning Index view
+2020-12-20 01:54:29.6228 INFO Verifying session
+2020-12-20 01:54:29.6468 INFO Session not Verified
+2020-12-20 01:54:29.6916 INFO Returning the Login View
+2020-12-20 01:54:39.8812 INFO User submitted the login form
+2020-12-20 01:54:41.3086 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 01:54:41.3197 INFO Verifying session
+2020-12-20 01:54:41.3197 INFO Session Verified
+2020-12-20 01:58:32.9220 INFO Returning the Login View
+2020-12-20 01:58:39.2814 INFO User submitted the login form
+2020-12-20 01:58:40.7240 INFO Login Failed. Redirecting user to Login Page
+2020-12-20 01:58:40.7330 INFO Returning the Login View
+2020-12-20 01:58:49.9131 INFO User submitted the login form
+2020-12-20 01:58:49.9380 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 01:58:49.9458 INFO Verifying session
+2020-12-20 01:58:49.9458 INFO Session Verified
+2020-12-20 01:59:24.0204 INFO Returning Index view
+2020-12-20 01:59:26.8339 INFO Returning the Login View
+2020-12-20 01:59:34.1506 INFO User submitted the login form
+2020-12-20 01:59:35.6011 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 01:59:35.6011 INFO Verifying session
+2020-12-20 01:59:35.6011 INFO Session Verified
+2020-12-20 01:59:41.0689 INFO User logging out and terminating the session
+2020-12-20 01:59:41.0761 INFO Returning Index view
+2020-12-20 01:59:42.3595 INFO Returning the Login View
+2020-12-20 01:59:49.4243 INFO User submitted the login form
+2020-12-20 01:59:49.4243 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 01:59:49.4343 INFO Verifying session
+2020-12-20 01:59:49.4343 INFO Session Verified
+2020-12-20 01:59:50.9270 INFO User logging out and terminating the session
+2020-12-20 01:59:50.9328 INFO Returning Index view
+2020-12-20 02:03:43.0013 INFO Returning Index view
+2020-12-20 02:03:46.5699 INFO Returning the Login View
+2020-12-20 02:03:53.9424 INFO User submitted the login form
+2020-12-20 02:03:55.0735 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 02:03:55.0934 INFO Verifying session
+2020-12-20 02:03:55.0934 INFO Session Verified
+2020-12-20 02:03:58.1150 INFO User logging out and terminating the session
+2020-12-20 02:03:58.1218 INFO Returning Index view
+2020-12-20 02:11:16.5798 INFO Returning Index view
+2020-12-20 02:11:19.4872 INFO Returning the Login View
+2020-12-20 02:11:27.1507 INFO User submitted the login form
+2020-12-20 02:11:28.6106 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 02:11:28.6226 INFO Verifying session
+2020-12-20 02:11:28.6226 INFO Session Verified
+2020-12-20 02:14:23.1584 INFO Returning Index view
+2020-12-20 02:14:25.5101 INFO Returning the Login View
+2020-12-20 02:14:32.1507 INFO User submitted the login form
+2020-12-20 02:14:33.5966 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 02:14:33.6088 INFO Verifying session
+2020-12-20 02:14:33.6088 INFO Session Verified
+2020-12-20 02:14:40.3751 INFO User logging out and terminating the session
+2020-12-20 02:14:40.3895 INFO Returning Index view
+2020-12-20 02:16:28.2852 INFO Returning Index view
+2020-12-20 02:16:30.2270 INFO Returning the Login View
+2020-12-20 02:16:36.0420 INFO User submitted the login form
+2020-12-20 02:16:37.4789 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 02:16:37.4999 INFO Verifying session
+2020-12-20 02:16:37.4999 INFO Session Verified
+2020-12-20 02:16:52.1302 INFO User logging out and terminating the session
+2020-12-20 02:16:52.1361 INFO Returning Index view
+2020-12-20 02:19:49.2527 INFO Returning Index view
+2020-12-20 02:19:52.1160 INFO Returning the Login View
+2020-12-20 02:19:59.0462 INFO User submitted the login form
+2020-12-20 02:20:00.4843 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 02:20:00.5069 INFO Verifying session
+2020-12-20 02:20:00.5069 INFO Session Verified
+2020-12-20 02:21:22.8569 INFO Returning Index view
+2020-12-20 02:21:24.8027 INFO Returning the Login View
+2020-12-20 02:21:37.2435 INFO User submitted the login form
+2020-12-20 02:21:38.6579 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 02:21:38.6784 INFO Verifying session
+2020-12-20 02:21:38.6784 INFO Session Verified
+2020-12-20 02:21:43.0084 INFO User logging out and terminating the session
+2020-12-20 02:21:43.0084 INFO Returning Index view
+2020-12-20 02:22:33.5966 INFO Returning Index view
+2020-12-20 02:22:35.5220 INFO Returning the Login View
+2020-12-20 02:22:41.2876 INFO User submitted the login form
+2020-12-20 02:22:42.7596 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 02:22:42.7816 INFO Verifying session
+2020-12-20 02:22:42.7816 INFO Session Verified
+2020-12-20 02:22:59.9559 INFO User logging out and terminating the session
+2020-12-20 02:22:59.9629 INFO Returning Index view
+2020-12-20 02:24:37.2815 INFO Returning the Login View
+2020-12-20 02:24:43.1991 INFO User submitted the login form
+2020-12-20 02:24:43.1991 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 02:24:43.1991 INFO Verifying session
+2020-12-20 02:24:43.1991 INFO Session Verified
+2020-12-20 02:26:37.4497 INFO Returning Index view
+2020-12-20 02:26:40.0513 INFO Returning the Login View
+2020-12-20 02:26:46.3426 INFO User submitted the login form
+2020-12-20 02:26:47.7854 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 02:26:47.8071 INFO Verifying session
+2020-12-20 02:26:47.8071 INFO Session Verified
+2020-12-20 02:27:03.0002 INFO User logging out and terminating the session
+2020-12-20 02:27:03.0002 INFO Returning Index view
+2020-12-20 02:27:26.8127 INFO Returning Index view
+2020-12-20 02:27:29.0243 INFO Returning the Login View
+2020-12-20 02:27:35.4601 INFO User submitted the login form
+2020-12-20 02:27:36.8799 INFO Login succeeded. Redirecting user to Dasboard
+2020-12-20 02:27:36.9009 INFO Verifying session
+2020-12-20 02:27:36.9009 INFO Session Verified
+2020-12-20 02:27:41.2710 INFO User logging out and terminating the session
+2020-12-20 02:27:41.2767 INFO Returning Index view
+2020-12-20 02:42:10.2501 INFO Returning Index view
+2020-12-20 02:42:14.2899 INFO Returning the Login View
+2020-12-20 02:42:25.1215 INFO Returning the Index view to the user after catching exception
+2020-12-20 02:42:28.9431 INFO Returning Index view
