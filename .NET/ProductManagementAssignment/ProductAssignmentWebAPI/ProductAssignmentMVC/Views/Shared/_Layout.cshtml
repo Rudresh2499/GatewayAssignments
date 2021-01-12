@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span>
+                    @if (Session["UserName"] != null)
+                    {
+                        @Html.ActionLink("Product Assignment (Web API and MVC)", "Dashboard", "Dashboard", new { area = "" }, new { @class = "navbar-brand" });
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Product Assignment (Web API and MVC)", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" });
+                    }
+                </span>
+            </div>
+            @{
+                if (Session["UserName"] != null)
+                {
+                    <span class="pull-right">@Html.ActionLink("Log Out", "Logout", "Dashboard", new { area = "" }, new { @class = "navbar-brand" })</span>
+                }
+                else
+                {
+                    ;
+                }
+            }
+        </div>
+    </div>
+    <div class="container-fluid h-100 col-md-2" style="margin-top:10px;">
+        <div class="row h-100">
+            @if (Session["UserName"]!=null)
+            {
+                <nav class="d-none d-md-block sidebar" style="margin-top: 5px;">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li>
+                                <a class="btn btn-default" onclick="location.href='@Url.Action("AddProduct","Product")'" style="margin: 3px;">Add a Product</a>
+                            </li>
+                            <li>
+                                <a class="btn btn-default" onclick="location.href='@Url.Action("ViewAllProducts","Product")'" style="margin: 3px;">View All Products</a>
+                            </li>
+                            <li>
+                                <a class="btn btn-default" onclick="location.href='@Url.Action("AddProductCategory","ProductCategory")'" style="margin: 3px;">Add a Product Category</a>
+                            </li>
+                            <li>
+                                <a class="btn btn-default" onclick="location.href='@Url.Action("ViewAllProductsCategory","ProductCategory")'" style="margin: 3px;">View All Product Categories</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            }
+        </div>
+    </div>
+    <div class="container body-content col-md-9">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Rudresh Patel's ASP.NET Web API Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

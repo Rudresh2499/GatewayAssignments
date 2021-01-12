@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductAssignmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="LargeImageDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Path" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ProductDetails" Relationship="Self.FK_ProductDetails_LargeImageDetails" FromRole="ProductCategory" ToRole="ProductDetails" />
+  </EntityType>
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="ShortDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LongDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SmallImageId" Type="Int32" Nullable="false" />
+    <Property Name="LargeImageId" Type="Int32" />
+    <NavigationProperty Name="ProductCategory" Relationship="Self.FK_ProductDetails_LargeImageDetails" FromRole="ProductDetails" ToRole="ProductCategory" />
+    <NavigationProperty Name="SmallImageDetail" Relationship="Self.FK_ProductDetails_SmallImageDetails" FromRole="ProductDetails" ToRole="SmallImageDetails" />
+  </EntityType>
+  <EntityType Name="SmallImageDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Path" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ProductDetails" Relationship="Self.FK_ProductDetails_SmallImageDetails" FromRole="SmallImageDetails" ToRole="ProductDetails" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ProductDetails_LargeImageDetails">
+    <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="1" />
+    <End Role="ProductDetails" Type="Self.ProductDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductDetails">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDetails_SmallImageDetails">
+    <End Role="SmallImageDetails" Type="Self.SmallImageDetail" Multiplicity="1" />
+    <End Role="ProductDetails" Type="Self.ProductDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SmallImageDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductDetails">
+        <PropertyRef Name="SmallImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProductAssignmentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="LargeImageDetails" EntityType="Self.LargeImageDetail" />
+    <EntitySet Name="ProductCategories" EntityType="Self.ProductCategory" />
+    <EntitySet Name="ProductDetails" EntityType="Self.ProductDetail" />
+    <EntitySet Name="SmallImageDetails" EntityType="Self.SmallImageDetail" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+    <AssociationSet Name="FK_ProductDetails_LargeImageDetails" Association="Self.FK_ProductDetails_LargeImageDetails">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="ProductDetails" EntitySet="ProductDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDetails_SmallImageDetails" Association="Self.FK_ProductDetails_SmallImageDetails">
+      <End Role="SmallImageDetails" EntitySet="SmallImageDetails" />
+      <End Role="ProductDetails" EntitySet="ProductDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

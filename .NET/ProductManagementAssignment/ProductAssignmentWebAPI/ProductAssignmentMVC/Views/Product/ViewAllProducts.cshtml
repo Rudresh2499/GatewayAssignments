@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ProductAssignmentMVC.Models.mvcProductDetail>
+
+@{
+    ViewBag.Title = "ViewAllProducts";
+}
+
+<h2>List of All Products</h2>
+<style>
+    th {
+        text-align: center;
+    }
+</style>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+<script type="text/javascript" src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.noConflict();
+        $('#allProducts').DataTable();
+    });
+</script>
+
+<p>
+    <a href="@Url.Action("AddProduct","Product")" class="btn btn-success">Add a new Product</a>
+</p>
+<hr />
+<table id="allProducts" class="table table-hover" style="text-align: center;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCategory.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th>
+                Display Image
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCategory.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShortDescription)
+                </td>
+                <td>
+                    <img src="@Url.Content(item.SmallImageDetail.Path)" style="max-height: 50px; max-width: 50px; padding: 2px;" />
+                </td>
+                <td>
+                    <a href="@Url.Action("ViewProduct","Product",new { id = item.Id })" class="btn btn-primary" style="margin: 2px;">Detailed View</a>
+                    <a href="@Url.Action("EditProduct","Product",new { id = item.Id })" class="btn btn-info" style="margin: 2px;">Edit</a>
+                    <a href="@Url.Action("DeleteProduct","Product",new { id = item.Id })" class="btn btn-danger" style="margin: 2px;">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<div>
+    <a href="@Url.Action("Dashboard","Dashboard")" class="btn btn-default">&laquo;Back to Dasboard</a>
+</div>
+@if (TempData["deletedProductName"] != null)
+{
+    <hr />
+    <p class="text-danger"><strong>Message :- The Product "@TempData["deletedProductName"].ToString()" was deleted from the registry</strong></p>
+}
+@if (TempData["editedProductName"] != null)
+{
+    <hr />
+    <p class="text-info"><strong>Message :- The Product "@TempData["editedProductName"].ToString()" was edited</strong></p>
+}
+@if (TempData["addedProductName"] != null)
+{
+    <hr />
+    <p class="text-success"><strong>Message :- The Product "@TempData["addedProductName"].ToString()" was added to the registry</strong></p>
+}

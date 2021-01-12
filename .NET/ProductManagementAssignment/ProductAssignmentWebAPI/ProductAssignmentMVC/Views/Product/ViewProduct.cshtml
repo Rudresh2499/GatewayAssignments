@@ -1,0 +1,54 @@
+﻿@model ProductAssignmentMVC.Models.mvcProductDetail
+
+@{
+    ViewBag.Title = "ViewProduct";
+    string ImagePath = Model.SmallImageDetail.Path;
+    decimal TotalCost =  Model.Quantity * Model.Price;
+}
+
+<h2>Product Details</h2>
+<br />
+<h3><strong>@Model.Name</strong></h3>
+<br />
+<p><img src="@Url.Content(ImagePath)" style="border: 2px solid; border-radius: 15px; max-width: 300px; max-height: 300px; padding: 15px;"/></p>
+<br />
+<hr />
+<p><h4><strong>Order Summary</strong></h4></p>
+<hr />
+<p><h5>Product Category &rarr; @Model.ProductCategory.CategoryName</h5></p>
+<p><h5>Quantity &rarr; @Model.Quantity</h5></p>
+<p><h5>Unit Price &rarr; @Convert.ToDecimal(Model.Price).ToString("#,#0.00")</h5></p>
+<p><h5>Total Cost of Order &rarr; <strong>@Convert.ToDecimal(TotalCost).ToString("#,#0.00")</strong></h5></p>
+<hr />
+<h4><strong>Short Summary of the Product</strong></h4>
+<hr />
+<h5><p>@Model.ShortDescription</p></h5>
+<br />
+<hr />
+<h4><strong>Detailed Description</strong></h4>
+<hr />
+<h5><p>
+    @if(Model.LongDescription != null)
+    {
+        @Model.LongDescription;
+    }
+    else
+    {
+        <p>No Detailed description available</p>
+    }
+</p></h5>
+<hr />
+@if(Model.LargeImageId != null)
+{
+    <hr />
+    <h4><strong>Other Images of Product</strong></h4>
+    <hr />
+    <img src="@Url.Content(ViewBag.LargeImagePath)" style="max-height: 500px; max-width: 500px; padding: 10px; border:2px solid; border-radius: 15px;" />
+    <hr />
+}
+<div>
+    <a href="@Url.Action("Dashboard","Dashboard")" class="btn btn-default">&laquo;Back to Dasboard</a>
+</div>
+
+
+

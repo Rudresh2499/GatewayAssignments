@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProductAssignmentMVC.Models.mvcProductCategory>
+
+@{
+    ViewBag.Title = "ViewAllProductsCategory";
+}
+
+<h2>Product Categories</h2>
+<style>
+    th{
+        text-align: center;
+    }
+</style>
+
+
+<p>
+    <a class="btn btn-success" onclick="location.href = '@Url.Action("AddProductCategory","ProductCategory")'">Add a Product Category</a>
+</p>
+<table id="allProducts" class="table table-hover" style="text-align:center;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            Actions
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            <a href="@Url.Action("EditProductCategory", "ProductCategory", new { id=item.Id })" class="btn btn-info">Edit</a>&nbsp;
+            <a href="@Url.Action("DeleteProductCategory", "ProductCategory", new { id=item.Id })" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+}
+</table>
+
+<div>
+    <a href="@Url.Action("Dashboard","Dashboard")" class="btn btn-default">&laquo;Back to Dasboard</a>
+</div>

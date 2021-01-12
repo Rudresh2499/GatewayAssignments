@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+}
+
+<h2>The Following error Occured</h2>
+<br />
+<h4 class="text-danger"><strong>@ViewBag.ErrorMessage</strong></h4>
+<br />
+<a href="@Url.Action("Index","Home")" class="btn btn-default">&laquo; Back to Index View</a>
+

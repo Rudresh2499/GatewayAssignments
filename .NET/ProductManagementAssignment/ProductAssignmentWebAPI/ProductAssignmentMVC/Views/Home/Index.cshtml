@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Product Assignment Project</h1>
+    <p class="lead">Made Using ASP.NET MVC 5, Entity Framework, Web API. Database provide using Microsoft SQL Server 2019</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <p><a class="btn btn-info" onclick="location.href = '@Url.Action("LogIn","LogIn")'">Log In as Admin &raquo;</a></p>
+    </div>
+    <div class="col-md-6">
+        <p><a class="btn btn-success" onclick="location.href = '@Url.Action("SignUp","SignUp")'">Sign Up as Admin &raquo;</a></p>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-1 col-md-10">
+        <span class="text-success">@TempData["SignUpMessage"]</span>
+    </div>
+</div>

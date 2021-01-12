@@ -1,0 +1,13 @@
+﻿@using ProductAssignmentMVC.Models
+@{
+    ViewBag.Title = "Dashboard";
+
+    if (Session["UserName"] != null)
+    {
+        string UserName = Session["UserName"].ToString();
+        ViewBag.UserName = UserName;
+    }
+
+}
+<h2>Dashboard</h2>
+<p class="lead">Welcome @ViewBag.UserName</p>
