@@ -1,0 +1,2 @@
+E:\Gateway Assignments\.NET\HotelManagementWebAPI\HMSTest\obj\Debug\HMSTest.csprojAssemblyReference.cache
+E:\Gateway Assignments\.NET\HotelManagementWebAPI\HMSTest\obj\Debug\HMSTest.csproj.CoreCompileInputs.cache

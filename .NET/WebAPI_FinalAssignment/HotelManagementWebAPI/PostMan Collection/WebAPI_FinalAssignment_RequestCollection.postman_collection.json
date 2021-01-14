@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "98b7eb52-8b0b-4d01-90bb-e8295023436d",
+		"name": "WebAPI_FinalAssignment_RequestCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET_Requests",
+			"item": [
+				{
+					"name": "GetAllHotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44395/api/Hotel",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Hotel"
+							]
+						},
+						"description": "List of All Hotels sorted alphabetically"
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomsByCity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44395/api/Room?City=Anand",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Room"
+							],
+							"query": [
+								{
+									"key": "City",
+									"value": "Anand"
+								}
+							]
+						},
+						"description": "Getting rooms by city"
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomsByPinCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44395/api/Room?PinCode=393002",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Room"
+							],
+							"query": [
+								{
+									"key": "PinCode",
+									"value": "393002"
+								}
+							]
+						},
+						"description": "Getting Rooms by Pincode"
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomsByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44395/api/Room?Category=2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Room"
+							],
+							"query": [
+								{
+									"key": "Category",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Getting Rooms By Category"
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomAvailibilityFalse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44395/api/Room/22?Date=2021-01-14",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Room",
+								"22"
+							],
+							"query": [
+								{
+									"key": "Date",
+									"value": "2021-01-14"
+								}
+							]
+						},
+						"description": "Getting Room Availibility on a given date\r\nAns : False"
+					},
+					"response": []
+				},
+				{
+					"name": "GetRoomAvailibilityTrue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44395/api/Room/21?Date=2021-01-14",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Room",
+								"21"
+							],
+							"query": [
+								{
+									"key": "Date",
+									"value": "2021-01-14"
+								}
+							]
+						},
+						"description": "Getting Room Availibility on a given date\r\nAns : True"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST_Requests",
+			"item": [
+				{
+					"name": "PostBookedRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"BookingDate\": \"2021-01-20T00:00:00\",\r\n    \"RoomId\": 14,\r\n    \"StatusOfBooking\": 0,\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44395/api/Booking",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Booking"
+							]
+						},
+						"description": "Booking a Room with a particular date\r\nBooking Confirm"
+					},
+					"response": []
+				},
+				{
+					"name": "PostBookedRoomBadRequest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"BookingDate\": \"2021-01-2T00:00:00\",\r\n    \"RoomId\": 10,\r\n    \"StatusOfBooking\": 0,\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44395/api/Booking",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Booking"
+							]
+						},
+						"description": "Booking a Room with a particular date\r\nBooking not Confirm"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT_Requests",
+			"item": [
+				{
+					"name": "PutUpdateBookingDate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"BookingDate\": \"2021-01-20T00:00:00\",\r\n        \"RoomId\": 16,\r\n        \"StatusOfBooking\": 0,\r\n        \"Room\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44395/api/Booking/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Booking",
+								"3"
+							]
+						},
+						"description": "Updating Booking date of a room by its ID"
+					},
+					"response": []
+				},
+				{
+					"name": "PutUpdateBookingStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"BookingDate\": \"2021-01-20T00:00:00\",\r\n        \"RoomId\": 16,\r\n        \"StatusOfBooking\": 1,\r\n        \"Room\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44395/api/Booking/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Booking",
+								"3"
+							]
+						},
+						"description": "Updating Booking Status of a room by its ID"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE_Requests",
+			"item": [
+				{
+					"name": "DeleteBookingById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44395/api/Booking/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"Booking",
+								"5"
+							]
+						},
+						"description": "Deleting a Booking by its ID"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "Hello@1234",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "rpatel2499@gmail.com",
+				"type": "string"
+			}
+		]
+	}
+}
